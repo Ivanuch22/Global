@@ -11,7 +11,6 @@ body {
 .work{
     height: 100vh;
     transform: translateZ(0) translateX(0) rotateY(0deg);
-
     transition: all 0.4s;
     padding-left: 50px;
     position: relative;
@@ -20,16 +19,15 @@ body {
     overflow: hidden;
 }
 .wrapper {
-    transition: all 1s;
-
+    transition: all 0.4s;
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;
+    // perspective: 1500px;
     height: 100%;
 }
 .wrapper--active{
     position: fixed;
-    perspective: 1500px;
 }
 .work--active{
     transform:  translateZ(-1800px) translateX(-50%) rotateY(45deg) ;
