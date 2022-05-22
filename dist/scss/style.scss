@@ -92,13 +92,18 @@ body {
         background-color: #0f33ff;
     }
     &__menu {
+        width: 17px;
+        height: 17px;
+        transform: translateY(-10px);
+    }   
+    &__menu-item {
+        transform: translateY(10px);
         z-index: 2;
         position: relative;
-        width: 13px;
+        width: 80%;
+        display: block;
         height: 2px;
         background-color: #fff;
-    }
-    &__menu-item {
         &::before {
             content: "";
             width: 19px;

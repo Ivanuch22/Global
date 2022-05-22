@@ -48,13 +48,7 @@ const secondSwiper =  new Swiper('.slider-work',{
         onlyInViewport: true,
         pageUpDown: true,
     },
-});
-
-// $('.header__menu').on('click', function(){
-//     $('.menu').toggleClass('menu-active');
-//     $('.wrapper').toggleClass('wrapper--active');
-//     $('.work').toggleClass('work--active');
-// });      
+});   
 
 const headerMenuButton = document.querySelector('.header__menu');
 const menu = document.querySelector('.menu');
