@@ -21,7 +21,7 @@ const mainSlider = new Swiper('.work',{
         eventsTarget: 'body',
     }
 });
-new Swiper('.slider-work',{
+const secondSwiper =  new Swiper('.slider-work',{
     slidesPerView: 3,
     slidesPerColumn: 1, 
     loop: true,
@@ -48,9 +48,6 @@ new Swiper('.slider-work',{
         onlyInViewport: true,
         pageUpDown: true,
     },
-});
-$('.work__smallContainer-button').on('click', function(){
-    $('.work__smallContainer-button'). toggleClass('work__smallContainer-button--active');
 });
 
 // $('.header__menu').on('click', function(){
