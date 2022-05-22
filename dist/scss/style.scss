@@ -10,6 +10,7 @@ body {
 
 .work{
     height: 100vh;
+    transform: translateZ(0) translateX(0) rotateY(0deg);
 
     transition: all 0.4s;
     padding-left: 50px;
@@ -31,8 +32,7 @@ body {
     perspective: 1500px;
 }
 .work--active{
-    transition: all 1s;
-    transform: translateZ(-1800px) translateX(-50%) rotateY(45deg);
+    transform:  translateZ(-1800px) translateX(-50%) rotateY(45deg) ;
     outline: 30px solid #0f33ff;
     perspective: 1500px;
 }
