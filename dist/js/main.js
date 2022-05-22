@@ -64,14 +64,11 @@ buttonHireUs.forEach(e=>{
         mainSlider.slideTo(4);
     })
 })
-
-wrapper.addEventListener('click',(e)=>{
-    if(e.target === headerMenuButton){
-        menu.classList.add('menu--active');
-        wrapper.classList.add('wrapper--active');
-        work.classList.add('work--active');
-        };
-});
+headerMenuButton.addEventListener('click',()=>{
+    menu.classList.add('menu--active');
+    wrapper.classList.add('wrapper--active');
+    work.classList.add('work--active');
+})
 
 const closeMenu = ()=>{
     menu.classList.remove('menu--active');
@@ -111,4 +108,3 @@ window.addEventListener('mousemove',()=>{
 window.addEventListener('touchend',()=>{
     changeActiveClassInMenuItem();
 });
-changeActiveClassInMenuItem();

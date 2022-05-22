@@ -6,8 +6,14 @@ body {
     color: #fff;
     position: relative;
 }
+
+
 .work{
+    height: 100vh;
+
     transition: all 0.4s;
+    padding-left: 50px;
+    position: relative;
     max-width: 1440px;
     margin: 0 auto;
     overflow: hidden;
@@ -141,12 +147,6 @@ body {
         background-color: #0f33ff;
     }
 }
-.work {
-    height: 100vh;
-    padding-left: 50px;
-    position: relative;
-}
-
 
 @media(max-width:608px){
     .menu--active{
