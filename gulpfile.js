@@ -36,7 +36,7 @@ function scripts() {
 }
 
 function images() {
-    return src('dist/img/**/*')
+    return src('dist/images/**/*')
         .pipe(imagemin([
             imagemin.gifsicle({ interlaced: true }),
             imagemin.mozjpeg({ quality: 75, progressive: true }),
@@ -48,7 +48,7 @@ function images() {
                 ]
             })
         ]))
-        .pipe(dest('docs/img'))
+        .pipe(dest('docs/images'))
 }
 
 function build() {
