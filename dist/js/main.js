@@ -48,7 +48,8 @@ const secondSwiper =  new Swiper('.slider-work',{
         onlyInViewport: true,
         pageUpDown: true,
     },
-});   
+});
+   
 
 const headerMenuButton = document.querySelector('.header__menu');
 const menu = document.querySelector('.menu');
@@ -110,3 +111,4 @@ window.addEventListener('mousemove',()=>{
 window.addEventListener('touchend',()=>{
     changeActiveClassInMenuItem();
 });
+changeActiveClassInMenuItem();
