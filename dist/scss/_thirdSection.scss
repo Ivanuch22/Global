@@ -1,0 +1,123 @@
+.bg2 {
+    background-position: right 43px;
+    padding-left: 200px;
+    margin-right: 70px;
+    height: 100%;
+    .work__text {
+        width: 430px;
+        padding-top: 96px;
+        padding-bottom: 60px;
+    }
+}
+.work{
+    &__link {
+        font-size: 14px;
+        font-family: "Proxima Nova Bold";
+        color: #fff;
+        img {
+            transition: all 0.3s;
+            padding-left: 9px;
+        }
+        &:hover{
+            img{
+                padding-left: 17px;
+
+            }
+        }
+    }
+    &__row {
+        padding-top: 55px;
+    }
+    &__row-item {
+        margin-right: 30px;
+        width: 169px;
+        height: 92px;
+        border: 11px solid #0f33ff;
+        display: inline-block;
+        position: relative;
+        &:hover {
+            .work__row-item-description{
+                bottom: -28px;  
+            }
+        }
+    }
+    &__row-item-description {
+        position: absolute;
+        bottom: -18px;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-family: "Proxima Nova Bold";
+        left: 10px;
+        transition: 0.3s all;
+
+    }
+    &__row-img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+//Третій екран
+
+@media (max-width: 1024px) {
+    .bg2 {
+        margin-right: 0;
+        padding-left: 50px;
+    }
+}
+@media (max-width: 800px) {
+    .work__row{
+        display: flex;
+        justify-content: space-around;
+    }
+    .work__row-item{
+        margin: 0;
+    }
+    .bg2 {
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .work__text{
+            padding-top: 0;
+        }
+    }
+}
+@media (max-width: 700px) {
+
+    .header__button{
+        margin-right: 50px;
+    }
+    .bg2 {
+        background-size: 0;
+
+    }
+    .work__row-item {
+        margin-bottom: 20px;
+        margin-right: 0;
+        // width: 143px;
+    }
+    .work__row {
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 570px) {
+
+    .bg2 {
+        .work__text {
+            font-size: 65px;
+            line-height: 1;
+            padding-bottom: 45px;
+            max-width: 100%;
+        }
+        .work__row{
+            display: none;
+        }
+    }
+}
+@media(max-width:373px){
+    .work__row-item{
+        width: 141px;
+    }
+}

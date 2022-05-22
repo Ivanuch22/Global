@@ -1,0 +1,256 @@
+.bg {
+    margin: 22px 75px 0 200px;
+    background-repeat: no-repeat;
+    background-position: right 60px;
+    background-size: 510px 460px;
+    .work__text {
+        padding-top: 59px;
+        padding-bottom: 60px;
+        width: 420px;
+        background-size: cover;
+    }
+}   
+.work {
+    &__button {
+        font-size: 14px;
+        font-family: "Proxima Nova Bold";
+        text-transform: uppercase;
+        color: #fff;
+        position: relative;
+        padding: 9px 0;
+        display: flex;
+        margin-bottom: 100px;
+
+        &::before {
+            transition: all 0.3s;
+            content: "";
+            position: absolute;
+            height: 31px;
+            width: 90px;
+            left: 10px;
+            background-color: #0f33ff;
+            z-index: -2;
+            top: 0;
+        }
+        img {
+            margin-left: 15px;
+        }
+        &:hover{
+            &::before {
+                transition: all 0.3s;
+                height: 31px;
+                width: 110px;
+                left: -10px;
+            }
+        }
+    }
+}
+
+.row {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    &::before {
+        content: "";
+        width: 405px;
+        height: 1.5px;
+        background-color: #fff;
+        opacity: 0.3;
+        position: absolute;
+        top: 0;
+        left: -15px;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 6px;
+        background-color: #0f33ff;
+    }
+    &__text {
+        width: 250px;
+
+        letter-spacing: 2px;
+        opacity: 0.3;
+        transition: 0.3s all;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &__title {
+        text-transform: uppercase;
+        line-height: 72px;
+        font-size: 18px;
+        color: #ffffff;
+        font-family: "Proxima Nova Bold";
+    }
+    &__description {
+        font-size: 16px;
+        line-height: 24px;
+        color: #ffffff;
+        font-family: "Proxima Nova Regular";
+    }
+}
+
+//левая навигация
+
+.global-paginations-text {
+    display: block;
+}
+.work__item.swiper-slide {
+    &::before {
+        content: "";
+        position: absolute;
+        height: 565px;
+        width: 1px;
+        background-color: #fff;
+        opacity: 0.2;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+.swiper-pagination {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    justify-content: space-between;
+    counter-reset: numbers;
+    left: 29px;
+}
+.swiper-pagination-bullet {
+    background-color: #fff;
+    opacity: 1;
+    width: 3px;
+    height: 3px;
+    left: 20px;
+    position: relative;
+    &::before {
+        position: absolute;
+        left: 20px;
+        top: -5px;
+        content: "0" counter(numbers);
+        font-family: "Proxima Nova light",sans-serif;
+        counter-increment: numbers;
+        z-index: 20;
+    }
+    &::after {
+        
+        content: "Text";
+        position: absolute;
+        left: 20px;
+        top: -5px;
+        display: none;
+    }
+}
+.swiper-pagination-bullet-active {
+    background-color: #0f33ff;
+    width: 3px;
+    height: 3px;
+    &::before {
+        left: -20px;
+    }
+    &::after {
+        display: block;
+    }
+}
+
+///Адаптация первого екрана
+
+@media (max-width: 1120px) {
+    .bg {
+        margin: 22px 52px 0 85px;
+    }
+}
+@media (max-width: 1024px) {
+
+    .bg {
+        margin: 22px 15px 0 75px;
+    }
+    .work {
+        padding-left: 30px;
+    }
+    .global-pagination {
+        left: 8px;
+    }
+}
+@media (max-width: 915px) {
+    .global-pagination {
+        display: none;
+    }
+    .work {
+        padding-left: 0px;
+        &__text {
+            font-size: 75px;
+            line-height: 65px;
+        }
+    }
+    .row__title {
+        font-size: 16px;
+        line-height: 60px;
+    }
+    .row__description {
+        font-size: 14px;
+        line-height: 19px;
+    }
+    .bg {
+        margin: 22px 15px 0 10px;
+        background-size: 483px auto;
+    }
+    .work__item.swiper-slide::before {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .row::before {
+        width: 100%;
+        right: 0;
+    }
+    .work__text {
+        font-size: 60px;
+        line-height: 50px;
+    }
+    .bg {
+        background-size: 432px;
+    }
+    .row {
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 650px) {
+    .bg {
+        background-size: 0;
+    }
+}
+@media screen and(max-width:560px){
+
+    .row{
+        display: none;
+    }
+    .bg{
+        display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    }
+    .bg .work__text{
+        padding-bottom: 35px;
+        font-size: 62px;
+        letter-spacing: 2px;
+        line-height: 62px;
+    }
+}
+
+@media (max-height: 800px) {
+    .row__title {
+        line-height: 35px;
+    }
+}
+@media (max-height: 700px) {
+    .row__text {
+        display: none;
+    }
+}
