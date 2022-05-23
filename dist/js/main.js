@@ -73,14 +73,14 @@ headerMenuButton.addEventListener('click',()=>{
     menu.classList.add('menu--active');
     wrapper.classList.add('wrapper--active');
     work.classList.add('work--active');
-    addChangesToLinksMenu()
+    aadasdf();
 })
 //закриття меню
 const closeMenu = ()=>{
     menu.classList.remove('menu--active');
     wrapper.classList.remove('wrapper--active');
     work.classList.remove('work--active');
-    removeChangesToLinksMenu()
+    ssdf()
 };
 
 //відкриття екрану при натиску елементів меню
@@ -146,31 +146,16 @@ Logo.addEventListener('click',()=>{
     mainSlider.slideTo(0);
 })
 
-// функції для створення анімації елементам меню
-//при появі 
-const addChangesToLinksMenu = ()=>{
-    const menuItems = document.querySelectorAll('.menu__item');
-    let time = 0;
-    for(let i = 0; i<menuItems.length; i++){
-        time = time + 35;
-        setTimeout(() => {
-            menuItems[i].style.left = '0px';
-            menuItems[i].style.opacity = '1';
-            menuItems[i].style.transform = 'translateZ(0px)';
-        }, time);
-    }  
-}
-//при після 
 
-const removeChangesToLinksMenu = ()=>{
+const aadasdf = ()=>{
     const menuItems = document.querySelectorAll('.menu__item');
-    let time = 0;
-    for(let i = 0; i<menuItems.length; i++){
-        time = time + 35;
-        setTimeout(() => {
-            menuItems[i].style.left = '300px';
-            menuItems[i].style.opacity = '1';
-            menuItems[i].style.transform = 'translateZ(-520px)';
-        }, time);
-    }  
+    menuItems.forEach(e=>{
+        e.classList.add('menu__item---active');
+    })
+}
+const ssdf = ()=>{
+    const menuItems = document.querySelectorAll('.menu__item');
+    menuItems.forEach(e=>{
+        e.classList.remove('menu__item---active');
+    })
 }
