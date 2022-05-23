@@ -1,4 +1,4 @@
-
+//перший слайдер 
 const mainSlider = new Swiper('.work',{
     direction: 'vertical',
     effect: "fade",
@@ -21,6 +21,8 @@ const mainSlider = new Swiper('.work',{
         eventsTarget: 'body',
     }
 });
+//другий слайдер 
+
 const secondSwiper =  new Swiper('.slider-work',{
     slidesPerView: 3,
     slidesPerColumn: 1, 
@@ -59,23 +61,29 @@ const menuLinks = document.querySelectorAll('.menu__item-text');
 const mainSliderItems = document.querySelectorAll('.work__item');
 const buttonHireUs = document.querySelectorAll('.hire-Button');
 
+//переніс на останній екран
 buttonHireUs.forEach(e=>{
     e.addEventListener("click",()=>{
         mainSlider.slideTo(4);
     })
 })
+
+//відкриття меню
 headerMenuButton.addEventListener('click',()=>{
     menu.classList.add('menu--active');
     wrapper.classList.add('wrapper--active');
     work.classList.add('work--active');
+    addChangesToLinksMenu()
 })
-
+//закриття меню
 const closeMenu = ()=>{
     menu.classList.remove('menu--active');
     wrapper.classList.remove('wrapper--active');
     work.classList.remove('work--active');
+    removeChangesToLinksMenu()
 };
 
+//відкриття екрану при натиску елементів меню
 menuLinks.forEach((e,n)=>{
     e.addEventListener('click',()=>{
         mainSlider.slideTo(n);
@@ -83,13 +91,14 @@ menuLinks.forEach((e,n)=>{
         addActiveClassToMenuItem(n);
     });
 });
+//додавання активного класу до елемента меню 
 const addActiveClassToMenuItem = (number)=>{
     menuLinks.forEach(e=>{
         e.parentElement.classList.remove('menu__item--active');
     });
     menuLinks[number].parentElement.classList.add('menu__item--active');
 };
-
+//зміна активного класу елементу меню при скролі
 const changeActiveClassInMenuItem=()=>{
     mainSliderItems.forEach((e,n)=>{
         if(e.classList.contains('swiper-slide-active')){
@@ -102,13 +111,15 @@ const changeActiveClassInMenuItem=()=>{
         };
     });
 };
-window.addEventListener('mousemove',()=>{
+window.addEventListener('mousewheel',()=>{
     changeActiveClassInMenuItem();
 });
 window.addEventListener('touchend',()=>{
     changeActiveClassInMenuItem();
 });
+changeActiveClassInMenuItem()
 
+//добавлення активного класу для кнопок форми
 const contactButton = document.querySelectorAll('.work__smallContainer-button');
 contactButton.forEach(e=>{
     e.addEventListener('click', ()=>{
@@ -116,6 +127,7 @@ contactButton.forEach(e=>{
     })
 })
 
+//функціонал плейсхолдера на інпуті
 const inputs = document.querySelectorAll('.work__smallContainer-input');
 inputs.forEach((e)=>{
     e.addEventListener('focus',()=>{    
@@ -127,3 +139,38 @@ inputs.forEach((e)=>{
         }
     })
 })
+
+//перехід по лого до головного екрану   
+const Logo = document.querySelector('.header__logo')
+Logo.addEventListener('click',()=>{
+    mainSlider.slideTo(0);
+})
+
+// функції для створення анімації елементам меню
+//при появі 
+const addChangesToLinksMenu = ()=>{
+    const menuItems = document.querySelectorAll('.menu__item');
+    let time = 0;
+    for(let i = 0; i<menuItems.length; i++){
+        time = time + 35;
+        setTimeout(() => {
+            menuItems[i].style.left = '0px';
+            menuItems[i].style.opacity = '1';
+            menuItems[i].style.transform = 'translateZ(0px)';
+        }, time);
+    }  
+}
+//при після 
+
+const removeChangesToLinksMenu = ()=>{
+    const menuItems = document.querySelectorAll('.menu__item');
+    let time = 0;
+    for(let i = 0; i<menuItems.length; i++){
+        time = time + 35;
+        setTimeout(() => {
+            menuItems[i].style.left = '300px';
+            menuItems[i].style.opacity = '1';
+            menuItems[i].style.transform = 'translateZ(-520px)';
+        }, time);
+    }  
+}
