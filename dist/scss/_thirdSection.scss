@@ -104,8 +104,10 @@
     .bg2 {
         margin-right: 0;
         padding-left: 50px;
+        
         .work__text{
             margin-left: 10px;
+            margin: 0 0 45px 0;
 
         }
     }
@@ -140,6 +142,12 @@
 }
 
 @media (max-width: 700px) {
+    .row__text {
+        display: none;
+    }
+    .work__container{
+        padding: 0;
+    }
 
     .header__button {
         margin-right: 50px;
@@ -153,11 +161,11 @@
     .work__row-item {
         margin-bottom: 20px;
         margin-right : 0;
-        // width: 143px;
     }
 
     .work__row {
         padding-top: 20px;
+        display: none;
     }
 }
 
@@ -167,7 +175,7 @@
         .work__text {
             font-size     : 65px;
             line-height   : 1;
-            padding-bottom: 45px;
+            margin-bottom: 45px;
             max-width     : 100%;
 
             span {
@@ -199,5 +207,10 @@
 @media(max-width:373px) {
     .work__row-item {
         width: 141px;
+    }
+}
+@media(max-height:550px) {
+    .work__row{
+        display: none;
     }
 }

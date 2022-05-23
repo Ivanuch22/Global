@@ -233,6 +233,9 @@
     }
 }
 @media (max-width: 768px) {
+    .row__text {
+        display: none;
+    }
     .work__button{
         margin-bottom: 60px;
     }
@@ -241,6 +244,7 @@
         right: 0;
     }
     .work__text {
+        padding-top: 0;
         font-size: 60px;
         line-height: 50px;
     }
