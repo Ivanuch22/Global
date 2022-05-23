@@ -108,3 +108,22 @@ window.addEventListener('mousemove',()=>{
 window.addEventListener('touchend',()=>{
     changeActiveClassInMenuItem();
 });
+
+const contactButton = document.querySelectorAll('.work__smallContainer-button');
+contactButton.forEach(e=>{
+    e.addEventListener('click', ()=>{
+        e.classList.toggle('work__smallContainer-button--active');
+    })
+})
+
+const inputs = document.querySelectorAll('.work__smallContainer-input');
+inputs.forEach((e)=>{
+    e.addEventListener('focus',()=>{    
+        e.nextElementSibling.classList.add('work__smallContainer-label--active');
+    })
+    e.addEventListener('blur', ()=>{
+        if(e.value.length === 0){
+            e.nextElementSibling.classList.remove('work__smallContainer-label--active');
+        }
+    })
+})

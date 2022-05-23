@@ -1,3 +1,5 @@
+
+
 .work{
     &__smallContainer {
         max-width: 770px;
@@ -6,6 +8,10 @@
     }
     &__smallContainer-row {
         text-align: center;
+        &:first-child{
+            display: flex;
+            justify-content: space-between;
+        }
         &:last-child {
             .work__smallContainer-button {
                 width: 400px;
@@ -13,16 +19,26 @@
         }
         &:nth-child(3) {
             .work__smallContainer-button {
-                margin-bottom: 70px;
+                margin-top: 60px;
+                text-transform: uppercase;
+                background-color: #0f33ff;
+                border: none;
             }
         }
         &:nth-child(4) {
             padding-bottom: 63px;
         }
     }
-    &__smallContainer-input-container{
+    &__smallContainer-row-top{
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        width: 80%;
+        margin: 0 auto;
+    }
+    &__smallContainer-input-container{
+        display: flex;
+        justify-content: space-between;
     }
     &__smallContainer-input-wrapper{
         position: relative;
@@ -40,93 +56,102 @@
         background-color: transparent;
         font-size: 30px;
         display: inline-block;
+        color: #fff;
+        position: relative;
         font-family: "Proxima Nova Light";
-
+        padding:  0 0 5px 0;
         z-index: 2000;
-        &:first-child {
-            margin-right: 65px;
+        &:focus{
+            ~ .work__smallContainer-label{
+                visibility: visible;
+            }
         }
     }
+    &__smallContainer-label{
+        position: absolute;
+        font-family: "Proxima Nova Light";
+        color: #fff;
+        bottom: 5px;
+        font-size: 30px;
+        left: 0%;
+        transition: 0.3s ease-in all;
+
+    }
     &__smallContainer-button {
-        margin: 0 25px;
-        margin-bottom: 37px;
-        background-color: transparent;
+        transition: all 0.3s;
         width: 200px;
-        height: 50px;
+        display: inline-block;
+        line-height: 50px;
+        font-weight: 700;
+        text-align: center;
+        cursor: pointer;
+        box-sizing: border-box;
+        margin: 0 25px;
+        margin-bottom: 30px;
+        background-color: transparent;
         border: 2px solid #fff;
         color: #fff;
         font-size: 18px;
         font-family: "Proxima Nova Bold";
-        &:hover {
-            background-color: #0f33ff;
-            border: #0f33ff;
+        .fa-solid {
+            transition: all 0.3s;
+            width: 0;
+            opacity: 0;
+            margin: 0;
         }
     }
-}
-.work__smallContainer-button--active {
-    background-color: #0f33ff;
 }
 
-//Останній екран
-@media(max-height: 915px){
-    // .work__title{
-    //     padding-top: 30px;
-    //     padding-bottom: 30px;
-    // }
-    // .work__smallContainer-row:nth-child(4){
-    //     padding-bottom: 30px;
-    // }
-    // .work__smallContainer-row:nth-child(3) .work__smallContainer-button{
-    //     margin-bottom: 10px;
-    // }
+.work__smallContainer-button--active {
+    background-color: #0f33ff;
+    transition: all 0.3s;
+    border: none;
+    .fa-solid{
+        width: 14px;
+        opacity: 1;
+        margin-right: 10px;
+    }
 }
-@media(max-width:800px){
+.work__smallContainer-label--active{
+    bottom: 39px;
+    font-size: 13px;
+}
+.work__smallContainer-row-top .work__smallContainer-row:last-child .work__smallContainer-button{
+    width: 200px ;
+}
+
+@media screen and (max-width:768px) {
     .work__smallContainer-row-top{
         display: flex;
-    }
-    .work__smallContainer-button{
-        margin:0 0 26px 0;
-    }
-    .work__smallContainer-row-top .work__smallContainer-row:nth-child(2){
-        width: auto;
-    }
-    .work__smallContainer-input-container::before{
-        right: 0;
-    }
-    .work__smallContainer-input-container::after{
-        left: 0;
-    }
-    .work__smallContainer-input-container{
-        display: flex;
-        .work__smallContainer-input-wrapper{
-            width: 40%;
+        justify-content: space-between;
+        .work__smallContainer-row{
+
+            width: 45% !important; 
+            align-items: center;
+            flex-direction: column;
         }
     }
+    .work__smallContainer-button{
+        margin: 0 0 30px 0;
+        width: 100% !important;
+    }
+    .work__smallContainer-input-wrapper{
+        width: 45%;
+        
+    }
+    .work__smallContainer-input-wrapper::after{
+        width: 100%;
+    }
+    .work__smallContainer-row:nth-child(3) .work__smallContainer-button{
+        width: 70% !important;
+    }
 }
-@media(max-width:700px){
-    .work__smallContainer-input:first-child{
-        margin-right: 0;
-    }
-    .work__smallContainer-input-container::before{
-        bottom: 38px;
-        right: 23%;
-        transform: translatex(-23%);
-    }
-    .work__smallContainer-input-container::after{
-        left: 24%;
-    }
-}
-@media(max-width:490px){
-    .wrapper{
-        padding: 0 10px;
+@media screen and (max-width: 500px) {
+    .work__smallContainer-row-top{
+        width: 100%;
     }
     .work__smallContainer-button{
-    width: 42%;
-}
-}
-@media(max-width:450px){
-    .work__smallContainer-row:last-child .work__smallContainer-button{
-        width: 90%;
-        margin: 0 auto;
+        font-size: 16px;
+        line-height: 45px;
     }
 }

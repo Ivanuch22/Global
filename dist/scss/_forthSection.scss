@@ -11,7 +11,8 @@
         box-shadow: 10px -10px 15px #000;
         height: 360px;
         position: absolute;
-        top: 168px;
+        top: 50%;
+        transform: translateY(-50%);
         right: 21%;
         text-align: center;
     }

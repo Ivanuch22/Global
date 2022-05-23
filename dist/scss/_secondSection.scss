@@ -76,17 +76,7 @@
         height: 330px;
     }
 }
-.work__smallContainer-row-top{
-    .work__smallContainer-row{
-        &:nth-child(2){
-            width: 80%;
-            margin: 0 auto;
-        }
-    }
-}
-.work__smallContainer-row-top .work__smallContainer-row:last-child .work__smallContainer-button{
-    width: 200px ;
-}
+
 .slider-work-button-prev,
 .slider-work-button-next{
     z-index: 2;
@@ -138,9 +128,4 @@
         padding: 0; 
     }
 
-}
-.second-container{
-    position: relative;
-    top: 50%;
-    transform: translateY(-63%);
 }

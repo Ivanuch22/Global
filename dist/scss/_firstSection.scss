@@ -134,13 +134,40 @@
         left: 20px;
         top: -5px;
         content: "0" counter(numbers);
-        font-family: "Proxima Nova light",sans-serif;
+        font-family: "Montserrat",sans-serif;
         counter-increment: numbers;
         z-index: 20;
     }
+    &:first-child{
+        &::after{
+            content: "Home";
+        }
+    }
+    &:nth-child(2){
+        &::after{
+            content: "Work";
+        }
+    }
+    &:nth-child(3){
+        &::after{
+            content: "About";
+        }
+    }
+    &:nth-child(4){
+        &::after{
+            content: "Contacts";
+        }
+    }
+    &:last-child{
+        &::after{
+            content: "Hire us";
+        }
+    }
     &::after {
-        
-        content: "Text";
+        white-space: nowrap;
+        font-family: "Montserrat",sans-serif;
+        font-size: 14px;
+        font-weight: 300;
         position: absolute;
         left: 20px;
         top: -5px;
@@ -152,7 +179,7 @@
     width: 3px;
     height: 3px;
     &::before {
-        left: -20px;
+        left: -25px;
     }
     &::after {
         display: block;
@@ -206,6 +233,9 @@
     }
 }
 @media (max-width: 768px) {
+    .work__button{
+        margin-bottom: 60px;
+    }
     .row::before {
         width: 100%;
         right: 0;
@@ -217,8 +247,12 @@
     .bg {
         background-size: 432px;
     }
+    .row__text{
+        margin-bottom: 10px;
+    }
     .row {
         flex-wrap: wrap;
+        justify-content: space-around;
     }
 }
 @media (max-width: 650px) {
@@ -246,7 +280,9 @@
 }
 
 @media (max-height: 800px) {
+
     .row__title {
+        
         line-height: 35px;
     }
 }

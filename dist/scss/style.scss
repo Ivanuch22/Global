@@ -60,6 +60,11 @@ body {
     transform: translateY(-50%);
 
 }
+.work__item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .header {
     z-index: 20;
